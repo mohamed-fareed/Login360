@@ -12,9 +12,9 @@ class LoginUseCase(
     override fun execute(params: Params): Single<User> =
         userRepository.login(params)
 
-    class Params private constructor(val userName: String, val password: String) {
+    class Params private constructor(val email: String, val password: String) {
         companion object {
-            fun create(userName: String, password: String): Params = Params(userName, password)
+            fun create(email: String, password: String): Params = Params(email, password)
         }
     }
 }
