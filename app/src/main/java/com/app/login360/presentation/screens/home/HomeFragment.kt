@@ -43,10 +43,10 @@ class HomeFragment : Fragment() {
             tv_name.text = nameText
 
             val emailText = "${getString(R.string.label_email)}: ${it.email}"
-            tv_name.text = emailText
+            tv_email.text = emailText
 
             val phoneText = "${getString(R.string.label_phone)}: ${it.phone}"
-            tv_name.text = phoneText
+            tv_phone.text = phoneText
         })
 
         viewModel.userLoggedOut.observe(this, Observer {
