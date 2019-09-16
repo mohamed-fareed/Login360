@@ -10,7 +10,10 @@ class LoginUseCase(
 ) : SingleUseCase<LoginUseCase.Params, User> {
 
     override fun execute(params: Params): Single<User> =
-        userRepository.login(params)
+        userRepository.login(params).map { user ->
+            userRepository.saveUser(user).subscribe()
+            user
+        }
 
     class Params private constructor(val email: String, val password: String) {
         companion object {

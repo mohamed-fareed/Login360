@@ -31,7 +31,28 @@ class LoginViewModel(
     private val _invalidPassword = MutableLiveData<Unit>()
     val invalidPassword: LiveData<Unit> = _invalidPassword
 
+    private val _userLoggedIn = MutableLiveData<Unit>()
+    val userLoggedIn: LiveData<Unit> = _userLoggedIn
+
     private val compositeDisposable = CompositeDisposable()
+
+    init {
+        checkUserLoginState()
+    }
+
+    private fun checkUserLoginState() {
+        compositeDisposable.add(
+            getLoggedInUseCase.execute(Unit)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    if (it != null)
+                        _userLoggedIn.postValue(Unit)
+                }, {
+                    _loginFailed.postValue(it)
+                })
+        )
+    }
 
     fun login(email: String, password: String) {
         if (!isFormValid(email, password)) return

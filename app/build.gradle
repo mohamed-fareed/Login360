@@ -41,6 +41,7 @@ dependencies {
     implementation Deps.rx_android
 
     implementation Deps.room
+    implementation Deps.room_rx_java
     implementation Deps.room_ktx
     kapt Deps.room_processor
 

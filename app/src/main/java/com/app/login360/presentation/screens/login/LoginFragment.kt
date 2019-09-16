@@ -7,10 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.app.login360.R
-import com.app.login360.presentation.gone
-import com.app.login360.presentation.removeError
-import com.app.login360.presentation.showToast
-import com.app.login360.presentation.visible
+import com.app.login360.presentation.*
 import kotlinx.android.synthetic.main.login_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -31,6 +28,8 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel.userLoggedIn.observe(this, Observer { openHome() })
 
         viewModel.loading.observe(this, Observer {
             progressbar.apply { if (it) visible() else gone() }

@@ -66,6 +66,7 @@ object Deps {
     val koin_viewmodel = "org.koin:koin-androidx-viewmodel:${Versions.koin_version}"
 
     val room = "androidx.room:room-runtime:${Versions.room_version}"
+    val room_rx_java = "androidx.room:room-rxjava2:${Versions.room_version}"
     val room_processor = "androidx.room:room-compiler:${Versions.room_version}"
     val room_ktx = "androidx.room:room-ktx:${Versions.room_version}"
 
