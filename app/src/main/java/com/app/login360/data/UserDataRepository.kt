@@ -17,4 +17,6 @@ class UserDataRepository(
         userRemote.login(loginRequest)
 
     override fun saveUser(user: User): Completable = userCache.saveUser(user)
+
+    override fun logout(user: User): Completable = userCache.deleteUser(user)
 }

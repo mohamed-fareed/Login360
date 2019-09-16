@@ -48,9 +48,7 @@ class LoginViewModel(
                 .subscribe({
                     if (it != null)
                         _userLoggedIn.postValue(Unit)
-                }, {
-                    _loginFailed.postValue(it)
-                })
+                }, {})
         )
     }
 

@@ -7,4 +7,5 @@ import io.reactivex.Single
 interface UserCache {
     fun saveUser(user: User): Completable
     fun getSavedUser(): Single<User>
+    fun deleteUser(user: User): Completable
 }

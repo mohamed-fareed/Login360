@@ -29,7 +29,10 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.userLoggedIn.observe(this, Observer { openHome() })
+        viewModel.userLoggedIn.observe(this, Observer {
+            openHome()
+            requireActivity().finish()
+        })
 
         viewModel.loading.observe(this, Observer {
             progressbar.apply { if (it) visible() else gone() }
@@ -41,6 +44,8 @@ class LoginFragment : Fragment() {
 
         viewModel.loginSuccess.observe(this, Observer { name ->
             showToast("${getString(R.string.label_welcome_back)}, $name")
+            openHome()
+            requireActivity().finish()
         })
 
         viewModel.invalidEmail.observe(this, Observer {

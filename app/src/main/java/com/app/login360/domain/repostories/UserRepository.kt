@@ -9,4 +9,5 @@ interface UserRepository {
     fun getSavedUser(): Single<User>
     fun login(loginRequest: LoginUseCase.Params): Single<User>
     fun saveUser(user: User): Completable
+    fun logout(user: User): Completable
 }

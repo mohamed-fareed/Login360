@@ -9,4 +9,6 @@ class UserCacheImp(private val appDatabase: AppDatabase) : UserCache {
     override fun saveUser(user: User): Completable = appDatabase.userDao().insertAll(user)
 
     override fun getSavedUser(): Single<User> = appDatabase.userDao().getSavedUser()
+
+    override fun deleteUser(user: User): Completable = appDatabase.userDao().deleteUser(user)
 }

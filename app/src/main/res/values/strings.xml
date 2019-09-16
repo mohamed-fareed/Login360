@@ -7,4 +7,9 @@
     <string name="label_welcome_back">Welcome back</string>
     <string name="invalid_email">Please enter valid email</string>
     <string name="invalid_password">Please enter valid password</string>
+    <string name="label_name">Name:</string>
+    <string name="label_email">Email</string>
+    <string name="label_phone">Phone</string>
+    <string name="action_logout">Logout</string>
+    <string name="label_logout_success">Logged out successfully</string>
 </resources>

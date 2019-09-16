@@ -7,5 +7,5 @@ import org.koin.dsl.module
 
 val presentationModule = module {
     viewModel { LoginViewModel(getLoggedInUseCase = get(), loginUseCase = get()) }
-    viewModel { HomeViewModel() }
+    viewModel { HomeViewModel(getLoggedInUseCase = get(), logoutUseCase = get()) }
 }
