@@ -1,19 +1,17 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+kapt {
+    correctErrorTypes = true
+}
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.1"
     defaultConfig {
         applicationId "com.app.login360"
-        minSdkVersion 15
-        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -25,10 +23,31 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.core:core-ktx:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation Deps.kotlin_stdlib
+
+    implementation Deps.androidx_appcompat
+    implementation Deps.androidx_core
+    implementation Deps.androidx_material
+    implementation Deps.androidx_viewmodel
+    implementation Deps.androidx_lifecycle
+    implementation Deps.androidx_constraintlayout
+
+    implementation Deps.retrofit
+    implementation Deps.logging_interceptor
+    implementation Deps.gson_converter
+
+    implementation Deps.rx_java
+    implementation Deps.rx_android
+
+    implementation Deps.room
+    implementation Deps.room_ktx
+    kapt Deps.room_processor
+
+    implementation Deps.koin
+    implementation Deps.koin_scope
+    implementation Deps.koin_viewmodel
+
+    testImplementation Deps.testlib_junit
+    androidTestImplementation Deps.testandroidx_runner
+    androidTestImplementation Deps.testandroidx_espresso
 }
