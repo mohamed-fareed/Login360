@@ -8,6 +8,6 @@ import io.reactivex.Single
 class GetLoggedInUseCase(
     private val userRepository: UserRepository
 ) : SingleUseCase<Unit, User> {
-    override suspend fun execute(params: Unit): Single<User> =
+    override fun execute(params: Unit): Single<User> =
         userRepository.getSavedUser()
 }

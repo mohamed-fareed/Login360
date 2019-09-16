@@ -33,6 +33,7 @@ dependencies {
     implementation Deps.androidx_constraintlayout
 
     implementation Deps.retrofit
+    implementation Deps.retrofit_rxjava_adapter
     implementation Deps.logging_interceptor
     implementation Deps.gson_converter
 

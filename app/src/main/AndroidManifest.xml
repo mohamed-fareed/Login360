@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.app.login360">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".Login360App"
         android:allowBackup="true"

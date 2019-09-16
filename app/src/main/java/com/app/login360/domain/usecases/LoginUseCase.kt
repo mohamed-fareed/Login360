@@ -9,7 +9,7 @@ class LoginUseCase(
     private val userRepository: UserRepository
 ) : SingleUseCase<LoginUseCase.Params, User> {
 
-    override suspend fun execute(params: Params): Single<User> =
+    override fun execute(params: Params): Single<User> =
         userRepository.login(params)
 
     class Params private constructor(val userName: String, val password: String) {
