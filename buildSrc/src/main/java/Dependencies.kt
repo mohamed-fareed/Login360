@@ -53,6 +53,7 @@ object Deps {
         "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.androidx_lifecycle}"
 
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    val retrofit_rxjava_adapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit}"
     val gson_converter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     val logging_interceptor =
         "com.squareup.okhttp3:logging-interceptor:${Versions.logging_interceptor}"

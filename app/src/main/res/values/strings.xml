@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Login360</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="action_login">Login</string>
+    <string name="error_generic">Something went wrong, please try again</string>
+    <string name="label_welcome_back">Welcome back</string>
 </resources>
